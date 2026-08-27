@@ -156,6 +156,8 @@ while True:
             if expression=="ANGRY" :
                 cv2.imshow("Minion",angry_img)
 
+            
+
             # Display expression
             cv2.putText(
                 frame,
@@ -171,6 +173,27 @@ while True:
 
                 x = int(landmark.x * frame.shape[1])
                 y = int(landmark.y * frame.shape[0])
+
+                cv2.circle(
+                    frame,
+                    (x, y),
+                    1,
+                    (0, 255, 0),
+                    -1
+                )
+
+                # Show landmark number
+                cv2.putText(
+                                  frame,
+                                  str(i),
+                                  (x, y),
+                                  cv2.FONT_HERSHEY_SIMPLEX,
+                                  0.3,
+                                  (255, 255, 255),
+                                  1
+                              )
+
+
 
                 
                 
